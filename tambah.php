@@ -1,7 +1,15 @@
 <?php
+require 'functions.php';
+$connection = mysqli_connect("localhost", "root", "", "databuku");
 
-if (isset($_POST['submit']){
+if (isset($_POST['submit'])){
 	
+	if (tambah($_POST) > 0){
+		echo "Data berhasil ditambahkan";
+	} else {
+		echo "Data gagal ditambahkan";
+	}
+
 }
 
 ?>
