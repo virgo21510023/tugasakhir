@@ -13,10 +13,10 @@ function query ($query){
 
 function tambah($data){
 	global $connection;
-	$title = $data['title'];
-	$author = $data['author'];
-	$year = $data['year'];
-	$img = $data['img'];
+	$title = htmlspecialchars($data['title']);
+	$author = htmlspecialchars($data['author']);
+	$year = htmlspecialchars($data['year']);
+	$img = htmlspecialchars($data['img']);
 
 	$query = "INSERT INTO databuku VALUES 
 			('','$title','$author','$year','$img')";
@@ -24,4 +24,11 @@ function tambah($data){
 	mysqli_query($connection, $query);
 	return mysqli_affected_rows($connection);
 }
+
+function hapus($id){
+	global $connection;
+	mysqli_query($connection, "DELETE FROM databuku WHERE id = $id");
+	return mysqli_affected_rows($connection);
+}
+
 ?>

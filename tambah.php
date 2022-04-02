@@ -5,9 +5,17 @@ $connection = mysqli_connect("localhost", "root", "", "databuku");
 if (isset($_POST['submit'])){
 	
 	if (tambah($_POST) > 0){
-		echo "Data berhasil ditambahkan";
+		echo"
+		<script>
+			alert('Data berhasil ditambahkan');
+			document.location.href = 'index.php';
+		</script>";
 	} else {
-		echo "Data gagal ditambahkan";
+		echo"
+		<script>
+			alert('Data gagal ditambahkan');
+			document.location.href = 'index.php';
+		</script>";
 	}
 
 }
@@ -27,19 +35,19 @@ if (isset($_POST['submit'])){
 		<ul>
 			<li>
 				<label for="title">Title : </label>
-				<input type="text" name="title" id="title">
+				<input type="text" name="title" id="title" required>
 			</li>
 			<li>
 				<label for="author">Author : </label>
-				<input type="text" name="author" id="author">
+				<input type="text" name="author" id="author" required>
 			</li>
 			<li>
 				<label for="year">Year : </label>
-				<input type="year" name="year" id="year">
+				<input type="year" name="year" id="year" required>
 			</li>
 			<li>
 				<label for="imgr">Image : </label>
-				<input type="img" name="img" id="img">
+				<input type="img" name="img" id="img" required>
 			</li>
 			<br>
 			<li>

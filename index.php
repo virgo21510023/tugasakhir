@@ -27,7 +27,7 @@ $books = query("SELECT * FROM databuku");
 			<td><?= $i ?></td>
 			<td>
 				<a href="">Edit</a> |
-				<a href="">Delete</a>
+				<a href="hapus.php?id=<?= $row['id']; ?>">Delete</a>
 			</td>
 			<td>
 				<img src="img/<?= $row['img'] ?>" width="70px">
